@@ -1,0 +1,38 @@
+@import "./styles.scss";
+
+.modal {
+    display: none;
+    top: 0;
+    z-index: 3;
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    padding: $size*2;
+    background-color: $color3;
+    .form {
+        margin-top: $size*2;
+        textarea {
+            min-height: $size*14;
+        }
+    }
+    .close {
+        display: flex;
+        flex-wrap: wrap;
+        img {
+            height: $size*3;
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+    .info {;
+        padding: $size*2;
+        text-align: center;
+        margin-top: $size*2;
+        h5{
+            line-height: $size*3;
+            span {
+                color: $color2;
+            }
+        }
+    }
+}

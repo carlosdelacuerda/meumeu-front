@@ -1,0 +1,30 @@
+<app-nav-perfil></app-nav-perfil>
+<div class="container login">
+    <form class="form" #login="ngForm" (ngSubmit)="onLogin(login.value)">
+        <div class="form-control">
+            <h5>Nombre de usuario o e-mail</h5>
+            <input type="text" name="username" ngModel>
+            <div class="alert">
+                <p>
+                    No existe ese usuario
+                </p>
+            </div>
+        </div>
+        <div class="form-control">
+            <h5>Password</h5>
+            <input type="password" name="password" ngModel>
+            <div class="alert">
+                <p>
+                    El password es incorrecto
+                </p>
+            </div>
+        </div>
+        <div class="form-control" style="display: none;">
+            <label>
+                <input type="checkbox" id="registered" checked>
+                <span> Recordar mis datos</span>
+            </label>
+        </div>
+        <input type="submit" class="button button-primary button-register" type="submit" value="ENTRAR">
+    </form>
+</div>

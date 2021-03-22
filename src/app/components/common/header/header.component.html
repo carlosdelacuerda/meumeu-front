@@ -1,0 +1,24 @@
+<header>
+    <div class="container">
+        <a [routerLink]="['/home']" class="logo">
+            <img src="../../../../assets/images/logo-w.svg" alt="logo">
+        </a>
+        <a [routerLink]="['/register']" class="logarme"  id="toRegister"  *ngIf="!isActive">ENTRAR</a>
+        <div class="logged"  id="toProfile" *ngIf="isActive">
+            <a class="icon" style="display: none;">
+                <img src="../../../../assets/images/bell.svg" alt="">
+                <span class="alert"></span>
+            </a>
+            <a class="icon"  [routerLink]='["/mailRecive"]'>
+                <img class="icon" src="../../../../assets/images/envelope.svg" alt="">
+                <span class="alert" style="display: none;"></span>
+            </a>
+            <a [routerLink]="['/profile']">
+                <figure class="profile">
+                    <img [src]="allData.picture" alt="profile image">
+                </figure>
+            </a>
+        </div>
+    </div>
+</header>
+<div class="push-down"></div>

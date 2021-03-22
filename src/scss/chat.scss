@@ -1,0 +1,36 @@
+@import './styles.scss';
+
+.chat {
+    .text-right {
+        text-align: right;
+    }
+    li , .header {
+        border-bottom: 1px solid $color4;
+        padding: $size*2;
+    }
+    li:last-child {
+        margin-bottom: $size*25;
+    }
+    h5 {
+        text-align: center;
+        line-height: $size*3;
+        span {
+            color: $color2;
+        }
+    }
+    .answer-box {
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: $color3;
+        padding-top: $size*2;
+        border-top: 1px solid $color4;
+        textarea {
+            width: 90%;
+            margin: 0 auto $size*12 auto;
+            height: $size*10;
+        }
+    }
+}

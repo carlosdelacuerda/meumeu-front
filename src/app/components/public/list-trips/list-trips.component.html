@@ -1,0 +1,21 @@
+<ul class="list">
+    <li *ngFor="let trip of arrTrips">
+        <a routerLink="{{ '/trips/detail/'+trip.id }}">
+            <div class="info">
+                <div class="picture">
+                    <figure>
+                        <img [src]="trip.picture" alt="Trip user profile picture">
+                    </figure>
+                </div>
+                <div>
+                    <h6><span class="text-dark">{{ trip.username }}</span> viaja a</h6>
+                    <h4 class="m-top-1">{{ trip.country }}</h4>
+                    <h6>desde el <span>{{ trip.begining  | date:'dd-MM-yyyy'  }}</span></h6>
+                    <h6>hasta el <span>{{ trip.ending  | date:'dd-MM-yyyy'}}</span></h6>
+                </div>
+            </div>
+            <p>{{ trip.notes }}</p>
+        </a>
+    </li>
+</ul>
+

@@ -1,0 +1,16 @@
+
+.filter {
+    padding: $size*2 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $color4;
+    h5 {
+        width: 100%;
+        text-align: center;
+        padding-right: $size;
+        padding-bottom: $size;
+    }
+    * {
+        width: 100%;
+    }
+}

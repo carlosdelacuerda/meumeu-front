@@ -1,0 +1,23 @@
+@import '../../../../scss/styles.scss';
+
+* {
+    width: 100%;
+}
+.form .upload-picture {
+    width: 60%;
+}
+form { 
+    .upload-picture::before {
+        height: $size*3;
+        width: 90%;
+    }
+    figure {
+        width: 80%;
+        overflow: hidden;
+        padding: $size*2;
+        
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+
+<div class="modal">
+    <div class="close">
+        <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
+    </div>
+    <div class="info">
+        <h5>Escribir a <span>{{ myTrip.username }}</span> en relación a su viaje a <span>{{ myTrip.country }}</span></h5>
+    </div>
+    <form #newMessage="ngForm" (ngSubmit)="onSubmit(newMessage.value)">
+        <div class="form form-control">
+            <h5>Asunto</h5>
+            <input type="text" name="title" ngModel>
+        </div>
+        <div class="form form-control">
+            <h5>Mensaje</h5>
+            <textarea name="text" ngModel></textarea>
+        </div>
+        <input type="submit" value="ENVIAR" class="button button-primary button-publish">
+    </form>
+</div>
+<a class="back" [routerLink]='["/listTrip"]'>
+    <img src="../../../../assets/images/arrow.svg" alt="">
+    <h3>VOLVER</h3>
+</a>
+<div class="detail detail-trip"  ng-repeat="item in myTrip">
+    <figure>
+        <img [src]="myTrip.picture" alt="">
+    </figure>
+    <h5><span>{{ myTrip.username }}</span> va de viaje a</h5>
+    <h1>{{ myTrip.country }}</h1>
+    <h5>el <span>{{ myTrip.begining | date:'dd-MM-yyyy' }}</span></h5>
+    <h5>y vuelve el <span>{{ myTrip.ending | date:'dd-MM-yyyy' }}</span></h5>
+    <p>{{ myTrip.notes }}</p>
+    <a class="button button-primary button-publish" (click)="showModal()">CONTACTAR</a>
+</div>
+

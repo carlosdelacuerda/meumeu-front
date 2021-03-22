@@ -1,0 +1,17 @@
+<app-nav-mail></app-nav-mail>
+<ul class="mail-list mail-recive">
+    <li *ngFor="let mail of arrMails">
+        <a routerLink="{{ '../mailing/inbox/detail/'+mail.id }}">
+            <div *ngIf="mail.fk_trip">
+                <p>De tu <span class="txt-highlight">viaje</span> a</p>
+                <h2>{{ mail.country_trip }}</h2>
+                <p>por <span>{{ mail.enviador }}</span></p>
+            </div>
+            <div *ngIf="mail.fk_desire">
+                <p>De tu <span class="txt-highlight">deseo</span> de</p>
+                <h2>{{ mail.country_desire }}</h2>
+                <p>por <span>{{ mail.enviador }}</span></p>
+            </div>
+        </a>
+    </li>
+</ul>

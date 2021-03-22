@@ -1,0 +1,18 @@
+@import './styles.scss';  
+  
+.mail-list {
+    a {
+        color: $color1;
+    }
+    li {
+        padding: $size*2;
+        border-bottom: 1px solid $color4;
+    }
+    h2 {
+        text-align: left;
+        margin: $size 0;
+    }
+    span {
+        font-weight: 900;
+    }
+}

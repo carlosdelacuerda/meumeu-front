@@ -1,0 +1,14 @@
+@import "../../../../scss/detail.scss";
+@import "../../../../scss/back.scss";
+@import "../../../../scss/modal.scss";
+
+.detail-caprice {
+    .figures {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: $size*2;
+        figure {
+            margin: $size auto;
+        }
+    }
+}

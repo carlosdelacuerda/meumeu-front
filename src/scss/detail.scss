@@ -1,0 +1,30 @@
+@import "./styles.scss";
+
+.detail {
+    padding: $size*2;
+    text-align: center;
+
+    h5 {
+        line-height: $size*3;
+    }
+    figure {
+        border: 2px solid $color1;
+        border-radius: 100%;
+        height: $size*12;
+        width: $size*12;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: $size*2;
+        img {
+            height: 100%;
+        }
+    }
+    p {
+        text-align: left;
+        margin-top: $size*2;
+    }
+    span {
+        color: $color2;
+        font-weight: 900;
+    }
+}

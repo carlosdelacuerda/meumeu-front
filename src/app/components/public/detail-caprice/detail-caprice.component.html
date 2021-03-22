@@ -1,0 +1,40 @@
+
+<div class="modal">
+    <div class="close">
+        <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
+    </div>
+    <div class="info">
+        <h5>Escribir a <span>{{ myDesire.username }}</span> en relación a su deseo <span>{{ myDesire.title }}</span> de <span>{{ myDesire.country }}</span></h5>
+    </div>
+    <form #newMessage="ngForm" (ngSubmit)="onSubmit(newMessage.value)">
+        <div class="form form-control">
+            <h5>Asunto</h5>
+            <input type="text" name="title" ngModel>
+        </div>
+        <div class="form form-control">
+            <h5>Mensaje</h5>
+            <textarea name="text" ngModel></textarea>
+        </div>
+        <input type="submit" value="ENVIAR" class="button button-primary button-publish">
+    </form>
+</div>
+<a class="back" [routerLink]='["/listCaprice"]'>
+    <img src="../../../../assets/images/arrow.svg" alt="">
+    <h3>VOLVER</h3>
+</a>
+<div class="detail detail-caprice">
+    <div class="figures">
+        <figure>
+            <img [src]="myDesire.picture" alt="product image">
+        </figure>
+        <figure>
+            <img [src]="myDesire.image" alt="Desire image">
+        </figure>
+    </div>
+    <h5>A <span>{{ myDesire.username }}</span></h5>
+    <h5>le gustaría conseguir <span>{{ myDesire.title }}</span> de</h5>
+    <h1>{{ myDesire.country }}</h1>
+    <h5>Publicado el <span>{{ myDesire.date | date: 'dd-mm-yyyy' }}</span></h5>
+    <p>{{ myDesire.notes }}</p>
+    <a class="button button-primary button-publish" (click)="showModal()">CONTACTAR</a>
+</div>

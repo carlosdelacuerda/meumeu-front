@@ -1,0 +1,68 @@
+@import '../../../../scss/styles.scss';
+
+.push-down {
+    width: 100%;
+    height: $size*6;
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: $color1;
+    width: 100%;
+    height: $size*6;
+    position: fixed;
+    padding: {
+        top: $size;
+        bottom: $size;
+    };
+    a {
+        color: $color3;
+    };
+    .logo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        img {
+            height: $size*4;
+        };
+    }
+    .logged {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        .icon {
+            position: relative;
+            img {
+                height:  $size*3;
+                margin-right: $size*3;
+            };
+            .alert {
+                height: $size;
+                width: $size;
+                background-color: $color2;
+                color: $color3;
+                border-radius: 100%;
+                position: absolute;
+                top: -$size/2;
+                left: -$size/2;
+
+            }
+        };
+        .profile {
+            border-radius: 100%;
+            height: $size*4;
+            width:  $size*4;
+            overflow: hidden;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .logarme {
+        margin: auto;
+        margin-right: 0;
+        font-family: $font2;
+        
+    }
+
+}

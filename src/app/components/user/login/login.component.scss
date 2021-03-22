@@ -1,0 +1,16 @@
+@import '../../../../scss/styles.scss';
+
+.login {
+    margin-top: $size*8;
+    .button-register {
+        width: 100%;
+        margin-top: $size*2;
+        margin-bottom: $size*2;
+    }
+    .alert {
+        height: $size*4;
+    }
+    .alert p {
+        opacity: 0;
+    }
+}

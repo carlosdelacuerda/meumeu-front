@@ -1,0 +1,7 @@
+<app-nav></app-nav>
+<div class="container filter">
+    <h5>Filtrar por pais</h5>
+    <app-countries (exportCountry)="filterCountry($event)"></app-countries>
+</div>
+<app-list-caprices [arrCaprices]="arrCaprices"></app-list-caprices>
+<a [routerLink]="['/formTrip']" class="button-secondary button button-publish">Publicar viaje o deseo</a>

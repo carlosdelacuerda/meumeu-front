@@ -1,0 +1,37 @@
+@import '../../../../scss/styles.scss';
+
+.home {
+    background-image: url('../../../../assets/images/airplane.png');
+    min-height: 60vh;
+    background-repeat: no-repeat;
+    background-size: $size*20;
+    background-position: $size*11 $size*12;
+    display: flex;
+    flex-wrap: wrap;
+    .hero-text {
+        position: absolute;
+        bottom: $size*12 ;
+        padding: $size*2;
+        div {
+            width: 100%;
+        }
+        h2 {
+            color: $color1;
+            text-align: left;
+            margin-top: $size*3;
+            margin-bottom: $size;
+            }
+    }
+    animation-duration: 3s;
+    animation-name: slidein;
+      
+      @keyframes slidein {
+        from {
+            background-position: -200px $size*6;
+        }
+      
+        to {
+            background-position: $size*11 $size*12;
+        }
+      }
+}

@@ -1,0 +1,16 @@
+<div class="mail-detail chat">
+    <div class="header">
+        <h5><span>{{ firstMail.username }}</span> te ha escrito en relación a tu viaje a <span>country</span></h5>
+        <h5><span>{{ firstMail.title }}</span></h5>
+        <p class="m-top-2">{{ firstMail.text }}</p>
+    </div>
+    <ul>
+        <li   *ngFor="let chat of arrChat" [ngClass]="{'text-right' : chat.fk_user_r === firstMail.fk_user_r}">
+            <p>{{ chat.text }}</p>
+        </li>
+    </ul>
+    <form class="answer-box" #newMessage="ngForm" (ngSubmit)="onSubmit(newMessage.value)">
+        <textarea placeholder="Escribe tu respuesta" name="text" ngModel></textarea>
+        <input type="submit" value="ENVIAR RESPUESTA" class="button button-primary button-publish">
+    </form>
+</div>
