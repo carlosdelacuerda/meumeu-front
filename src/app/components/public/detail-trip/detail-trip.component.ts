@@ -7,6 +7,7 @@ import { mail } from 'src/app/interfaces/mail.interface';
 import { MailingService } from 'src/app/services/mailing.service';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 
 @Component({
@@ -20,14 +21,16 @@ export class DetailTripComponent implements OnInit {
   allData: user;
 
   myCountry: string;
-
   newMail: mail;
+  baseUrl: string = baseUrl;
 
   myTrip: tripDetail;
   myId: number;
   url: string;
   positionId: number;
-  modal;
+  modalContact;
+  modalLogin;
+  token;
 
   constructor(
     private tripService: TripService,
@@ -39,21 +42,27 @@ export class DetailTripComponent implements OnInit {
    }
 
   async ngOnInit() {   
-    this.modal = document.querySelector(".modal");
+    this.token = localStorage.getItem('token')
+    this.modalContact = document.querySelector(".modalContact");
+    this.modalLogin = document.querySelector(".modalLogin");
     this.url = window.location.href;
     const arrId = this.url.split('/');
     this.positionId = arrId.length-1;
     const urlFinal = arrId[this.positionId];
     this.myTrip = await this.tripService.byId(urlFinal);
-
+    console.log(this.myTrip)
   } 
 
   showModal(){
-    this.modal.style.display = "block";
+    if (this.token) {
+    this.modalContact.style.display = "block";
+    }
+    this.modalLogin.style.display = "block";
   }
 
   closeModal(){
-    this.modal.style.display = "none";
+    this.modalContact.style.display = "none";
+    this.modalLogin.style.display = "none";
   }
 
   async onSubmit(pForm) {

@@ -1,10 +1,10 @@
 <app-nav-publish></app-nav-publish>
-<form class="form" #newDesire="ngForm" (ngSubmit)="onSubmit(newDesire.value)">
+<form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <h5 class="m-top-2">Pais donde se encuentra tu deseo</h5>
     <app-countries (exportCountry)="eventCountry($event)"></app-countries>
     <div class="form-control">
         <h5>Nombre del deseo</h5>
-        <input type="text" name="title" ngModel>
+        <input type="text" formControlName="title">
     </div>
     <div class="form-control">
         <figure>
@@ -12,12 +12,12 @@
         </figure>
         <div class="upload-picture">
             <h5>Foto del deseo</h5>
-            <input type="file" value="Subir una foto"  name="image" ngModel>
+            <input type="file" value="Subir una foto"  name="image" (change)="upLoad($event)">
         </div>
     </div>
     <div class="form-control">
         <h5>¿Quieres agregar alguna nota?</h5>
-        <textarea name="notes" ngModel></textarea>
+        <textarea formControlName="notes"></textarea>
     </div>
     <input class="button button-primary button-register button-publish" type="submit" value="Publicar deseo">
 </form>

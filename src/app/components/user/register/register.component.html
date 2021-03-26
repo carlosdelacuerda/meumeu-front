@@ -1,39 +1,43 @@
 <app-nav-perfil></app-nav-perfil>
 <div class="container register">
-    <form class="form" #register="ngForm" (ngSubmit)="onSubmit(register.value)">
+    <form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-control">
             <figure>
-                <img src="../../../../assets/images/no-user.svg" alt="">
+                <img src="../../../../assets/images/no-user.svg" alt="Profile image" id="preview">
             </figure>
             <div class="upload-picture">
                 <h5>Foto de perfil</h5>
-                <input type="file" value="Subir una foto">
+                <input type="file" value="Subir una foto" name="picture" (change)="onChange($event)" >
             </div>
         </div>
         <div class="form-control">
             <h5>Nombre de usuario</h5>
             <p>Este será el nombre que verán el resto de usuarios</p>
-            <input type="text" name="username" ngModel>
+            <input type="text" formControlName="username">
+            <span class="small txt-alert m-l-5p name-fail">Ese nombre ya está en uso, elige otro</span>
         </div>
         <div class="form-control">
             <h5>E-mail</h5>
             <p>Tu e-mail estará oculto y sólo lo usaremos para enviarte información relevante</p>
-            <input type="email" name="email" ngModel>
+            <input type="email" formControlName="email">
+            <span class="small txt-alert m-l-5p email-fail">Email en uso</span>
         </div>
         <div class="form-control">
             <h5>Password</h5>
-            <input type="password" name="password" ngModel>
+            <input type="password" formControlName="password">
+            <span class="small txt-alert m-l-5p password-fail">Los password no coinciden</span>
         </div>
         <div class="form-control">
             <h5>Repite el password</h5>
-            <input type="password">
+            <input type="password"  formControlName="repeatPassword">
         </div>
         <div class="form-control conditions">
             <label>
-                <input type="checkbox" id="conditions">
-                <span> Acepto las <a>condiciones de uso</a></span>
+                <input type="checkbox" id="conditions" formControlName="checkBox">
+                <span> Acepto las <a [routerLink]='["/conditions"]'>condiciones de uso</a></span>
             </label>
+            <span class="small txt-alert m-l-5p check-fail">Debes aceptar las condiciones de uso</span>
         </div>
-        <input class="button button-primary button-register" type="submit" value="ENVIAR">
+        <input class="button button-primary button-publish button-initial" type="submit" value="ENVIAR" >
     </form>
 </div>

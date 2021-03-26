@@ -8,3 +8,17 @@
 .conditions {
     padding-top: $size !important;
 }
+
+h5 + p {
+    font-size: $fbase/1.2;
+    line-height: $fbase*1.2;
+    margin-top: $size;
+}
+figure {
+    height: $size*14 !important;
+    width: $size*14 !important;
+    overflow: hidden;
+}
+figure img {
+    width: 100%;
+}

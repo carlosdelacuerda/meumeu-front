@@ -1,1 +1,7 @@
-<p>profile works!</p>
+<div class="profile">
+    <h1>{{ allData.username }}</h1>
+    <figure>
+        <img [src]="baseUrl+'/images/profile/'+allData.picture" alt="Profile picture">
+    </figure>
+    <button class="button button-primary button-publish" (click)="onClick()" [routerLink]='["/home"]'>DESLOGARME</button>
+</div>

@@ -135,7 +135,12 @@ input , select {
     width: calc(100% - #{$size*4});
     left: $size*2;
 }
-
+.button-initial {
+  position: initial;
+  margin-top: $size*2;
+  margin-left: 5%;
+  margin-bottom: $size*2;
+}
 //forms
 .form {
     display: flex;
@@ -237,4 +242,18 @@ input , select {
 }
 .m-top-2 {
   margin-top: $size*2;
+}
+.m-l-5p {
+  margin-left: 5%;
+}
+.small {
+  font-size: $fbase/1.2;
+}
+.txt-alert {
+  color: $color2;
+}
+.small.txt-alert {
+  min-height: 13px;
+  width: 100%;
+  opacity: 0;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { caprice } from 'src/app/interfaces/caprice.interface';
 import { CapricesService } from 'src/app/services/caprices.service';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 @Component({
   selector: 'app-list-caprices',
@@ -9,6 +10,8 @@ import { CapricesService } from 'src/app/services/caprices.service';
 })
 export class ListCapricesComponent implements OnInit {
 
+  
+  baseUrl: string = baseUrl;
 
   @Input() arrCaprices: caprice[];
 

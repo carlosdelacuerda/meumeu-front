@@ -1,4 +1,9 @@
 @import '../../../../scss/styles.scss';
+@import '../../../../scss/modal.scss';
+
+.modal a {
+    margin: $size*2 auto;
+}
 
 .home {
     background-image: url('../../../../assets/images/airplane.png');

@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  button;
+  token;
+  destine;
+  modal;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.modal = document.querySelector('.modal');
+    this.token = localStorage.getItem('token');
   }
 
+  click(){
+    if (this.token === null || this.token === 'undefined') {
+      this.modal.style.display = 'block';
+    }
+  }
+  closeModal() {
+    this.modal.style.display = 'none';
+  }
+ 
 }

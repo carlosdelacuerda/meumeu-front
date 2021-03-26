@@ -1,5 +1,18 @@
-
-<div class="modal">
+<div class="modal modalLogin">
+    <div class="close">
+        <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
+    </div>
+    <div class="info">
+        <h5>Tienes que registrarte para enviar mensajes</h5>
+        <a [routerLink]='["/register"]' class="button button-primary">
+            CREAR CUENTA
+        </a>
+        <a [routerLink]='["/login"]' class="button button-primary">
+            IDENTIFICARME
+        </a>
+    </div>
+</div>
+<div class="modal modalContact">
     <div class="close">
         <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
     </div>
@@ -25,10 +38,10 @@
 <div class="detail detail-caprice">
     <div class="figures">
         <figure>
-            <img [src]="myDesire.picture" alt="product image">
+            <img [src]="baseUrl+'/images/profile/'+myDesire.picture" alt="profile image">
         </figure>
         <figure>
-            <img [src]="myDesire.image" alt="Desire image">
+            <img [src]="baseUrl+'/images/desire/'+myDesire.image" alt="Desire image">
         </figure>
     </div>
     <h5>A <span>{{ myDesire.username }}</span></h5>

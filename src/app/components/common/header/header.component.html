@@ -15,7 +15,7 @@
             </a>
             <a [routerLink]="['/profile']">
                 <figure class="profile">
-                    <img [src]="allData.picture" alt="profile image">
+                    <img [src]="baseUrl+'/images/profile/'+allData.picture" alt="profile image" *ngIf="allData">
                 </figure>
             </a>
         </div>

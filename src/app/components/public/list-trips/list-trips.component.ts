@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trip } from 'src/app/interfaces/trip.interface';
+import { baseUrl } from 'src/app/services/baseUrl';
 import { TripService } from 'src/app/services/trip.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { TripService } from 'src/app/services/trip.service';
 })
 export class ListTripsComponent implements OnInit {
 
+  
   @Input() arrTrips: trip[];
 
+  baseUrl: string = baseUrl;
 
   constructor(
     private tripService: TripService

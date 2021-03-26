@@ -1,4 +1,7 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { user } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
+  users;
 
   constructor(
     public userService: UsersService
@@ -24,11 +28,13 @@ export class LoginComponent implements OnInit {
     const user = {username: pForm.username, password: pForm.password};
     const message = await this.userService.login(user);
     let newtoken = message.token;
-    localStorage.setItem('token' , newtoken);
-
-  
-
-   
+    if(message.token) {
+      localStorage.setItem('token' , newtoken);
+      this.userService.loginComplete();
+    }
   }
+
+
+
 
 }

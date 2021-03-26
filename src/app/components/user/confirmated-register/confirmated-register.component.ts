@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmated-register',
   templateUrl: './confirmated-register.component.html',
   styleUrls: ['./confirmated-register.component.scss']
 })
-export class ConfirmatedRegisterComponent implements OnInit {
+export class ConfirmatedRegisterComponent {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private zone: NgZone
+  ) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    // this.zone.run(() => {
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 3000);
+  // });
   }
+  
 
 }

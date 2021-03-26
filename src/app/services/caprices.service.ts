@@ -31,6 +31,6 @@ export class CapricesService {
 
 
   byId(id){
-    return this.httpClient.get<caprice>(this.capricesUrl+"/detaildesire/"+id).toPromise();
+    return this.httpClient.get<caprice>(this.capricesUrl+"/detail/"+id).toPromise();
   }
 }

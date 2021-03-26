@@ -1,0 +1,15 @@
+@import "../../../../scss/styles.scss";
+
+.profile {
+    figure {
+        margin: $size*2 auto;
+        width: $size*20;
+        height: $size*20;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 2px solid $color1;
+        img {
+            height: 100%;
+        }
+    }
+}

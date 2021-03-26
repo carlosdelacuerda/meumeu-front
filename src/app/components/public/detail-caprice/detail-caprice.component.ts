@@ -7,6 +7,7 @@ import { mail } from 'src/app/interfaces/mail.interface';
 import { MailingService } from 'src/app/services/mailing.service';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 
 @Component({
@@ -19,14 +20,16 @@ export class DetailCapriceComponent implements OnInit {
   allData: user;
 
   myCountry: string;
-
   newMail: mail;
+  baseUrl: string = baseUrl;
 
   myDesire: desireDetail;
   myId: number;
   url: string;
   positionId: number;
-  modal;
+  modalContact;
+  modalLogin;
+  token;
 
   constructor(
     private desireService: CapricesService,
@@ -38,7 +41,8 @@ export class DetailCapriceComponent implements OnInit {
    }
 
   async ngOnInit() { 
-      this.modal = document.querySelector(".modal");
+      this.modalContact = document.querySelector(".modalContact");
+      this.modalLogin = document.querySelector(".modalLogin");
       this.url = window.location.href;
       const arrId = this.url.split('/');
       this.positionId = arrId.length-1;
@@ -48,11 +52,15 @@ export class DetailCapriceComponent implements OnInit {
   } 
 
   showModal(){
-    this.modal.style.display = "block";
+    if (this.token) {
+    this.modalContact.style.display = "block";
+    }
+    this.modalLogin.style.display = "block";
   }
 
   closeModal(){
-    this.modal.style.display = "none";
+    this.modalContact.style.display = "none";
+    this.modalLogin.style.display = "none";
   }
 
   async onSubmit(pForm) {

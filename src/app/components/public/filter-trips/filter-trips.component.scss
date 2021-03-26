@@ -1,3 +1,8 @@
 @import '../../../../scss/styles.scss';
 @import '../../../../scss/filter.scss';
+@import '../../../../scss/modal.scss';
+
+.modal a {
+    margin: $size*2 auto;
+}
 

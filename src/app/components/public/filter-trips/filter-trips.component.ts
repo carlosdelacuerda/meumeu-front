@@ -9,6 +9,10 @@ import { TripService } from 'src/app/services/trip.service';
 })
 export class FilterTripsComponent implements OnInit {
 
+  button;
+  token;
+  modal;
+
   countrySelected: string;
 
   arrTrips: trip[];
@@ -18,6 +22,8 @@ export class FilterTripsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.modal = document.querySelector('.modal');
+    this.token = localStorage.getItem('token');
     this.tripService.getAllTrips()
     .then(response => {
       this.arrTrips = response;
@@ -46,6 +52,15 @@ export class FilterTripsComponent implements OnInit {
         console.log(error)
       })
     }
+  }
+  
+  click(){
+    if (this.token === null || this.token === 'undefined') {
+      this.modal.style.display = 'block';
+    }
+  }
+  closeModal() {
+    this.modal.style.display = 'none';
   }
 
 

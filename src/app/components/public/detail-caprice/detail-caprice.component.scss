@@ -2,6 +2,11 @@
 @import "../../../../scss/back.scss";
 @import "../../../../scss/modal.scss";
 
+
+.modal a {
+    margin: $size*2 auto;
+}
+
 .detail-caprice {
     .figures {
         display: flex;

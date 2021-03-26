@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observable, Observable } from 'rxjs';
+import { observable, Observable, Subject } from 'rxjs';
 import { user } from '../interfaces/user.interface';
 import { baseUrl } from './baseUrl';
 import jwt_decode from 'jwt-decode';
@@ -9,7 +9,6 @@ import jwt_decode from 'jwt-decode';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    // 'authorization': '750e8b43e5ed564462c90ef0d382db26'
   })
 };
 
@@ -23,8 +22,14 @@ export class UsersService {
 
   userTrip: string;
   usersUrl: string;
+  userLoged: string;
+  users;
 
-  constructor(private httpClient: HttpClient) {
+  private users$ = new Subject<boolean>();
+
+  constructor(
+    private httpClient: HttpClient,
+    ) {
     this.usersUrl = `${baseUrl}/api/users`;
  }
 
@@ -61,9 +66,20 @@ export class UsersService {
 
   tokenId (){
     const token = localStorage.getItem("token");
-    const decode = jwt_decode(token);
-    console.log('test',  decode['id'])
+    // const decode = jwt_decode(token);
+    // console.log('test',  decode['id'])
+    this.userLoged = token;
    }  
+
+   loginComplete(){
+    this.users$.next(true);
+   }
+
+
+
+  getLogged$(): Observable<boolean> {
+    return this.users$.asObservable();
+  }
 
 
 }

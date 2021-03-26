@@ -21,6 +21,8 @@ import { RegisterComponent } from './components/user/register/register.component
 import { tokenGuard } from './token.guard';
 import { InboxDetailComponent } from './components/comunication/inbox-detail/inbox-detail.component';
 import { SendDetailComponent } from './components/comunication/send-detail/send-detail.component';
+import { ConfirmatedRegisterComponent } from './components/user/confirmated-register/confirmated-register.component';
+import { ConditionsComponent } from './components/public/conditions/conditions.component';
 
 
 const routes: Routes = [
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'caprices/detail/:id', component: DetailCapriceComponent },
   { path: 'mailing/inbox/detail/:id', component: InboxDetailComponent },
   { path: 'mailing/send/detail/:id', component: SendDetailComponent },
+  { path: 'confirmationRegister', component: ConfirmatedRegisterComponent },
+  { path: 'conditions', component: ConditionsComponent },
   { path: '**', component: Error404Component }
 ];
 

@@ -1,7 +1,21 @@
 <app-nav></app-nav>
+<div class="modal">
+    <div class="close">
+        <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
+    </div>
+    <div class="info">
+        <h5>Tienes que registrarte para poder hacer publicaciones</h5>
+        <a [routerLink]='["/register"]' class="button button-primary">
+            CREAR CUENTA
+        </a>
+        <a [routerLink]='["/login"]' class="button button-primary">
+            IDENTIFICARME
+        </a>
+    </div>
+</div>
 <div class="container filter">
     <h5>Filtrar por pais</h5>
     <app-countries (exportCountry)="filterCountry($event)"></app-countries>
 </div>
 <app-list-caprices [arrCaprices]="arrCaprices"></app-list-caprices>
-<a [routerLink]="['/formTrip']" class="button-secondary button button-publish">Publicar viaje o deseo</a>
+<a [routerLink]="['/formTrip']" class="button-secondary button button-publish" (click)="click()">Publicar viaje o deseo</a>

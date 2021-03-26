@@ -9,6 +9,10 @@ import { caprice } from 'src/app/interfaces/caprice.interface';
 })
 export class FilterCapricesComponent implements OnInit {
 
+  button;
+  token;
+  modal;
+
   countrySelected: string;
   arrCaprices: caprice[];
 
@@ -17,6 +21,8 @@ export class FilterCapricesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.modal = document.querySelector('.modal');
+    this.token = localStorage.getItem('token');
     this.capriceService.getAllCaprices()
     .then(response => {
       this.arrCaprices = response;
@@ -44,6 +50,15 @@ export class FilterCapricesComponent implements OnInit {
       console.log(error)
     })
     }
+  }
+
+  click(){
+    if (this.token === null || this.token === 'undefined') {
+      this.modal.style.display = 'block';
+    }
+  }
+  closeModal() {
+    this.modal.style.display = 'none';
   }
 
 }
